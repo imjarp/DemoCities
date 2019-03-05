@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import demo.swapkeyboard.swap.com.demoapp.R
-import demo.swapkeyboard.swap.com.demoapp.usecase.dummy.DummyContent
+import demo.swapkeyboard.swap.com.demoapp.usecase.dummy.CityContent
 import kotlinx.android.synthetic.main.activity_cityitem_detail.*
 import kotlinx.android.synthetic.main.cityitem_detail.view.*
 
@@ -21,7 +21,7 @@ class CityItemDetailFragment : Fragment() {
     /**
      * The dummy content this fragment is presenting.
      */
-    private var item: DummyContent.DummyItem? = null
+    private var item: CityContent.DummyItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,7 @@ class CityItemDetailFragment : Fragment() {
                 // Load the dummy content specified by the fragment
                 // arguments. In a real-world scenario, use a Loader
                 // to load content from a content provider.
-                item = DummyContent.ITEM_MAP[it.getString(ARG_ITEM_ID)]
+                item = CityContent.ITEM_MAP[it.getString(ARG_ITEM_ID)]
                 activity?.toolbar_layout?.title = item?.content
             }
         }

@@ -4,14 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
-import android.support.design.widget.Snackbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import demo.swapkeyboard.swap.com.demoapp.R
 
-import demo.swapkeyboard.swap.com.demoapp.usecase.dummy.DummyContent
+import demo.swapkeyboard.swap.com.demoapp.usecase.dummy.CityContent
 import kotlinx.android.synthetic.main.activity_cityitem_list.*
 import kotlinx.android.synthetic.main.cityitem_list_content.view.*
 import kotlinx.android.synthetic.main.cityitem_list.*
@@ -37,7 +36,7 @@ class CityItemListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_cityitem_list)
 
         setSupportActionBar(toolbar)
-        toolbar.title = title
+        toolbar.title = getString(R.string.title_welcome)
 
 
         if (cityitem_detail_container != null) {
@@ -52,12 +51,12 @@ class CityItemListActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView(recyclerView: RecyclerView) {
-        recyclerView.adapter = SimpleItemRecyclerViewAdapter(this, DummyContent.ITEMS, twoPane)
+        recyclerView.adapter = SimpleItemRecyclerViewAdapter(this, CityContent.ITEMS, twoPane)
     }
 
     class SimpleItemRecyclerViewAdapter(
         private val parentActivity: CityItemListActivity,
-        private val values: List<DummyContent.DummyItem>,
+        private val values: List<CityContent.DummyItem>,
         private val twoPane: Boolean
     ) :
         RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder>() {
@@ -66,7 +65,7 @@ class CityItemListActivity : AppCompatActivity() {
 
         init {
             onClickListener = View.OnClickListener { v ->
-                val item = v.tag as DummyContent.DummyItem
+                val item = v.tag as CityContent.DummyItem
                 if (twoPane) {
                     val fragment = CityItemDetailFragment().apply {
                         arguments = Bundle().apply {

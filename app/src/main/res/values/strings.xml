@@ -3,4 +3,5 @@
     <string name="title_activity_splash">SplashActivity</string>
     <string name="title_cityitem_list">Cities</string>
     <string name="title_cityitem_detail">CityItem Detail</string>
+    <string name="title_welcome">Welcome to trip advisor</string>
 </resources>
